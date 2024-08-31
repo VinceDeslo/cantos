@@ -1,8 +1,10 @@
 use bracket_lib::prelude::*;
+use crate::{TERMINAL_WIDTH, TERMINAL_HEIGHT};
+use crate::ui::bottom_bar::BOTTOM_BAR_HEIGHT;
 use crate::maps::position::Position;
 
-pub const MAP_WIDTH: i32 = 80;
-pub const MAP_HEIGHT: i32 = 50;
+pub const MAP_WIDTH: i32 = TERMINAL_WIDTH;
+pub const MAP_HEIGHT: i32 = TERMINAL_HEIGHT-BOTTOM_BAR_HEIGHT-1;
 
 const WALL_GLYPH: char = '~';
 const FLOOR_GLYPH: char = '.';

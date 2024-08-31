@@ -2,6 +2,11 @@ use bracket_lib::prelude::*;
 use specs::{Component, DenseVecStorage, Join, World, WorldExt};
 use specs_derive::Component;
 
+mod ui;
+use ui::{
+    game_log,
+    bottom_bar::draw_bottom_bar,
+};
 mod maps;
 use maps::{
     map::{GameMap, draw_map}, 
@@ -13,6 +18,8 @@ mod players;
 use players::player::{Player, create_player_entity, player_input};
 
 const GAME_TITLE: &str = "Cantos";
+const TERMINAL_WIDTH: i32 = 80;
+const TERMINAL_HEIGHT: i32 = 50;
 
 struct State {
     ecs: World
@@ -34,6 +41,9 @@ impl GameState for State {
 
         // Automations
         // TBD...
+        
+        // Render interface
+        draw_bottom_bar(&self.ecs, ctx);
 
         // Render map
         let map = self.ecs.fetch::<GameMap>();
@@ -70,4 +80,5 @@ fn register_ecs_components(ecs: &mut World){
     ecs.register::<Player>();
 
     ecs.insert(random_wall_map::new());
+    ecs.insert(game_log::new());
 }
