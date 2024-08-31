@@ -3,7 +3,14 @@ use specs::{Component, DenseVecStorage, Join, World, WorldExt};
 use specs_derive::Component;
 
 mod maps;
-mod player;
+use maps::{
+    map::{GameMap, draw_map}, 
+    position::Position, 
+    random_wall_map,
+};
+
+mod players;
+use players::player::{Player, create_player_entity, player_input};
 
 const GAME_TITLE: &str = "Cantos";
 
@@ -23,17 +30,17 @@ impl GameState for State {
         ctx.cls();
 
         // Inputs 
-        player::player_input(self, ctx);
+        player_input(self, ctx);
 
         // Automations
         // TBD...
 
         // Render map
-        let map = self.ecs.fetch::<maps::GameMap>();
-        maps::draw_map(&map, ctx);
+        let map = self.ecs.fetch::<GameMap>();
+        draw_map(&map, ctx);
 
         // Render renderables
-        let positions = self.ecs.read_storage::<maps::Position>();
+        let positions = self.ecs.read_storage::<Position>();
         let renderables = self.ecs.read_storage::<Renderable>();
 
         for (pos, render) in (&positions, &renderables).join() {
@@ -52,15 +59,15 @@ fn main() -> BError {
     };
 
     register_ecs_components(&mut gs.ecs);
-    player::create_player_entity(&mut gs.ecs);
+    create_player_entity(&mut gs.ecs);
 
     main_loop(ctx, gs)
 }
 
 fn register_ecs_components(ecs: &mut World){
-    ecs.register::<maps::Position>();
+    ecs.register::<Position>();
     ecs.register::<Renderable>();
-    ecs.register::<player::Player>();
+    ecs.register::<Player>();
 
-    ecs.insert(maps::new_random_wall_map());
+    ecs.insert(random_wall_map::new());
 }
