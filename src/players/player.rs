@@ -10,12 +10,12 @@ use crate::maps::{
     collisions::not_wall_collision,
 };
 
-const PLAYER_GLYPH: char = 'O';
+const PLAYER_GLYPH: char = '@';
 
 #[derive(Component)]
 pub struct Player {}
 
-pub fn create_player_entity(ecs: &mut World){
+pub fn create_player(ecs: &mut World){
     ecs.create_entity() 
         .with(START_POSITION)
         .with(Renderable {
