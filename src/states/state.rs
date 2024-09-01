@@ -10,13 +10,16 @@ use crate::maps::{
 
 use crate::players::player::player_input;
 
-use crate::mobs::{
+use crate::systems::{
     mob_encounter_system::MobEncounterSystem,
     mob_movement_system::MobMovementSystem
 };
 
+use crate::states::run_state::RunState;
+
 pub struct State {
-    pub ecs: World
+    pub ecs: World,
+    pub run_state: RunState
 }
 
 impl State {
@@ -33,13 +36,12 @@ impl GameState for State {
     fn tick(&mut self, ctx: &mut BTerm) {
         ctx.cls();
 
-        self.run_systems();
-
-        // Inputs 
-        player_input(self, ctx);
-
-        // Automations
-        // TBD...
+        if self.run_state == RunState::Running {
+            self.run_systems();
+            self.run_state = RunState::Paused;
+        } else {
+            self.run_state = player_input(self, ctx);
+        }
         
         // Render interface
         draw_bottom_bar(&self.ecs, ctx);

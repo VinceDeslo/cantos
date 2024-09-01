@@ -3,6 +3,7 @@ use bracket_lib::prelude::*;
 use specs::{Builder, Component, DenseVecStorage, World, WorldExt, Join};
 use specs_derive::Component;
 
+use crate::states::run_state::RunState;
 use crate::{Renderable, State};
 use crate::maps::{
     map::{MAP_WIDTH, MAP_HEIGHT},
@@ -20,24 +21,25 @@ pub fn create_player(ecs: &mut World){
         .with(START_POSITION)
         .with(Renderable {
             glyph: to_cp437(PLAYER_GLYPH),
-            fg: RGB::named(MAGENTA),
+            fg: RGB::named(GREEN),
             bg: RGB::named(BLACK)
         })
         .with(Player {})
         .build();
 }
 
-pub fn player_input(gs: &mut State, ctx: &mut BTerm) {
+pub fn player_input(gs: &mut State, ctx: &mut BTerm) -> RunState {
     match ctx.key {
         Some(key) => match key {
             VirtualKeyCode::Left => try_move_player(-1, 0, &mut gs.ecs),
             VirtualKeyCode::Right => try_move_player(1, 0, &mut gs.ecs),
             VirtualKeyCode::Up => try_move_player(0, -1, &mut gs.ecs),
             VirtualKeyCode::Down => try_move_player(0, 1, &mut gs.ecs),
-            _ => {}
+            _ => { return RunState::Paused }
         },
-        None => {} // Nothing happened
+        None => { return RunState::Paused }
     }
+    return RunState::Running;
 }
 
 fn try_move_player(delta_x: i32, delta_y: i32, ecs: &mut World) {

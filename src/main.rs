@@ -2,12 +2,13 @@ use bracket_lib::prelude::*;
 use specs::{World, WorldExt};
 
 mod states;
+mod systems;
 mod ui;
 mod maps;
 mod players;
 mod mobs;
 
-use states::state::State;
+use states::{run_state::RunState, state::State};
 
 use ui::{
     render::Renderable,
@@ -35,6 +36,7 @@ fn main() -> BError {
 
     let mut gs: State = State {
         ecs: World::new(),
+        run_state: RunState::Running,
     };
 
     register_ecs_components(&mut gs.ecs);
