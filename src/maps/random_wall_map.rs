@@ -1,11 +1,17 @@
 use bracket_lib::prelude::*;
-use crate::maps::map::{GameMap, MAP_WIDTH, MAP_HEIGHT, TileType};
+use crate::maps::map::{Map, MAP_WIDTH, MAP_HEIGHT, TileType};
 use crate::maps::position::{START_POSITION, get_position_index};
 
-pub fn new() -> GameMap {
+use super::map::MapType;
+
+pub fn new() -> Map {
     let map_dimension = (MAP_WIDTH*MAP_HEIGHT) as usize;
-    let mut map = GameMap {
+    let mut map = Map {
+        map_type: MapType::Random,
         tiles: vec![TileType::Floor; map_dimension],
+        width: MAP_WIDTH,
+        height: MAP_HEIGHT,
+        visible_tiles: vec![false; map_dimension],
     };
 
     // Make external walls

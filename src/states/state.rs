@@ -4,13 +4,14 @@ use specs::{World, WorldExt, Join, RunNow};
 use crate::Renderable;
 use crate::ui::bottom_bar::draw_bottom_bar;
 use crate::maps::{
-    map::{GameMap, draw_map}, 
+    map::draw_map, 
     position::Position, 
 };
 
 use crate::players::player::player_input;
 
 use crate::systems::{
+    visibility_system::VisibilitySystem,
     mob_encounter_system::MobEncounterSystem,
     mob_movement_system::MobMovementSystem
 };
@@ -24,6 +25,9 @@ pub struct State {
 
 impl State {
     fn run_systems(&mut self) {
+        let mut visibility = VisibilitySystem{};
+        visibility.run_now(&self.ecs);
+
         let mut mob_movements = MobMovementSystem{};
         mob_movements.run_now(&self.ecs);
 
@@ -43,12 +47,8 @@ impl GameState for State {
             self.run_state = player_input(self, ctx);
         }
         
-        // Render interface
         draw_bottom_bar(&self.ecs, ctx);
-
-        // Render map
-        let map = self.ecs.fetch::<GameMap>();
-        draw_map(&map, ctx);
+        draw_map(&self.ecs, ctx);
 
         // Render renderables
         let positions = self.ecs.read_storage::<Position>();

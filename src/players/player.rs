@@ -3,6 +3,7 @@ use bracket_lib::prelude::*;
 use specs::{Builder, Component, DenseVecStorage, World, WorldExt, Join};
 use specs_derive::Component;
 
+use crate::mechanisms::field_of_view::FieldOfView;
 use crate::states::run_state::RunState;
 use crate::{Renderable, State};
 use crate::maps::{
@@ -12,6 +13,7 @@ use crate::maps::{
 };
 
 const PLAYER_GLYPH: char = '@';
+const PLAYER_FOV: i32 = 5; 
 
 #[derive(Component)]
 pub struct Player {}
@@ -25,6 +27,10 @@ pub fn create_player(ecs: &mut World){
             bg: RGB::named(BLACK)
         })
         .with(Player {})
+        .with(FieldOfView {
+            visible_tiles: Vec::new(),
+            range: PLAYER_FOV,
+        })
         .build();
 }
 
