@@ -8,7 +8,7 @@ pub const START_POSITION: Position = Position {
     y: MAP_HEIGHT / 2,
 };
 
-#[derive(Component, PartialEq)]
+#[derive(Component, PartialEq, Debug)]
 pub struct Position {
     pub x: i32,
     pub y: i32,

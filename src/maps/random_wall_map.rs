@@ -11,7 +11,9 @@ pub fn new() -> Map {
         tiles: vec![TileType::Floor; map_dimension],
         width: MAP_WIDTH,
         height: MAP_HEIGHT,
-        visible_tiles: vec![false; map_dimension],
+        discovered_tiles: vec![false; map_dimension],
+        blocked_tiles: vec![false; map_dimension],
+        tile_content: vec![Vec::new(); map_dimension],
     };
 
     // Make external walls

@@ -1,5 +1,6 @@
 use bracket_lib::random::RandomNumberGenerator;
 
+#[derive(Debug)]
 pub enum Direction {
     North,
     West,

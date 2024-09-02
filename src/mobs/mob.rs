@@ -2,7 +2,7 @@ use bracket_lib::prelude::*;
 use specs::{Builder, Component, DenseVecStorage, World, WorldExt};
 use specs_derive::Component;
 
-use crate::{maps::position::Position, Renderable};
+use crate::{maps::{blocks::BlocksTile, position::Position}, Renderable};
 
 // Eventually replace with a raw config file
 pub enum MobType {
@@ -21,6 +21,15 @@ impl MobType {
             MobType::Undead => "Undead".to_string(),
             MobType::Orc => "Orc".to_string(),
             MobType::Lich => "Lich".to_string()
+        }
+    }
+    pub fn get_article(&self) -> String {
+        match self {
+            MobType::Slime => "a".to_string(),
+            MobType::Imp => "an".to_string(),
+            MobType::Undead => "an".to_string(),
+            MobType::Orc => "an".to_string(),
+            MobType::Lich => "a".to_string()
         }
     }
     fn glyph(&self) -> FontCharType {
@@ -61,5 +70,6 @@ fn create_mob_entity(mob_type: MobType, x: i32, y: i32, ecs: &mut World){
             mob_type,
             encountered: false,
         })
+        .with(BlocksTile {})
         .build();
 }

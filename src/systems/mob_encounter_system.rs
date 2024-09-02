@@ -25,10 +25,18 @@ fn detect_encounter(data: <MobEncounterSystem as specs::System>::SystemData){
 
     for (mob_position, mob) in (&position, &mut mob).join() {
         for (player_position, _player) in (&position, &player).join() {
-            if mob_position == player_position && !mob.encountered {
+            let distance = DistanceAlg::Pythagoras.distance2d(
+                Point::new(player_position.x, player_position.y),
+                Point::new(mob_position.x, mob_position.y),
+            );
+
+            if distance < 1.5 && !mob.encountered {
                 mob.encountered = true;
-                let encounter_msg = format!("Encountered a {}", mob.mob_type.to_string());
-                console::log(encounter_msg);
+                println!(
+                    "Encountered {} {}",
+                    mob.mob_type.get_article(),
+                    mob.mob_type.to_string()
+                );
             }
         }
     }

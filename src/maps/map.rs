@@ -1,5 +1,5 @@
 use bracket_lib::prelude::*;
-use specs::World;
+use specs::{Entity, World};
 use crate::{TERMINAL_WIDTH, TERMINAL_HEIGHT};
 use crate::ui::bottom_bar::BOTTOM_BAR_HEIGHT;
 use crate::maps::position::Position;
@@ -16,18 +16,24 @@ pub enum MapType {
     Random,
 }
 
-#[derive(PartialEq, Copy, Clone)]
+#[derive(PartialEq, Copy, Clone, Debug)]
 pub enum TileType {
     Wall, 
     Floor,
 }
+
+pub const BLOCKING_TILE_TYPES: [TileType; 1] = [
+    TileType::Wall,
+];
 
 pub struct Map {
     pub map_type: MapType,
     pub tiles: Vec<TileType>,
     pub width: i32,
     pub height: i32,
-    pub visible_tiles: Vec<bool>,
+    pub discovered_tiles: Vec<bool>,
+    pub blocked_tiles: Vec<bool>,
+    pub tile_content: Vec<Vec<Entity>>,
 }
 
 impl Map {
@@ -35,6 +41,20 @@ impl Map {
         match map_type {
             MapType::Random => random_wall_map::new(), 
         } 
+    }
+
+    pub fn populate_blocked_tiles(&mut self){
+        let blocking_tiles = BLOCKING_TILE_TYPES.to_vec();
+
+        for (i, tile) in self.tiles.iter_mut().enumerate() {
+            self.blocked_tiles[i] = blocking_tiles.contains(tile);
+        }
+    }
+
+    pub fn clear_content_index(&mut self){
+        for content in self.tile_content.iter_mut(){
+            content.clear();
+        }
     }
 }
 
@@ -55,7 +75,7 @@ pub fn draw_map(ecs: &World, ctx: &mut BTerm){
     let mut position = Position{ x: 0, y: 0 };
 
     for (idx, tile) in map.tiles.iter().enumerate() {
-        if map.visible_tiles[idx] {
+        if map.discovered_tiles[idx] {
             match tile {
                 TileType::Floor => {
                     ctx.set(

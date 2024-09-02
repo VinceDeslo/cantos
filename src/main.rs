@@ -16,8 +16,9 @@ use ui::{
 };
 use mechanisms::field_of_view::FieldOfView;
 use maps::{
+    blocks::BlocksTile, 
     map::{Map, MapType}, 
-    position::Position,
+    position::Position
 };
 use players::player::{Player, create_player};
 use mobs::mob::{create_mobs, Mob};
@@ -46,6 +47,7 @@ fn main() -> BError {
 
 fn register_ecs_components(ecs: &mut World){
     ecs.register::<Position>();
+    ecs.register::<BlocksTile>();
     ecs.register::<FieldOfView>();
     ecs.register::<Renderable>();
     ecs.register::<Player>();

@@ -32,11 +32,11 @@ fn run_visibility(data: <VisibilitySystem as specs::System>::SystemData){
         fov.visible_tiles.retain(|p| p.x >= 0 && p.x < map.width && p.y >= 0 && p.y < map.height );
 
         // If this is the player, reveal what they can see
-        let p : Option<&Player> = player.get(entities);
-        if let Some(p) = p {
+        let _p : Option<&Player> = player.get(entities);
+        if let Some(_p) = _p {
             for vision in fov.visible_tiles.iter() {
                 let idx = get_position_index(vision.x, vision.y);
-                map.visible_tiles[idx] = true;
+                map.discovered_tiles[idx] = true;
             }
         }
     }

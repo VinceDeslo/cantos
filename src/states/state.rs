@@ -1,6 +1,9 @@
 use bracket_lib::prelude::*;
 use specs::{World, WorldExt, Join, RunNow};
 
+use crate::maps::map::Map;
+use crate::maps::position::get_position_index;
+use crate::systems::map_indexing_system::MapIndexingSystem;
 use crate::Renderable;
 use crate::ui::bottom_bar::draw_bottom_bar;
 use crate::maps::{
@@ -28,6 +31,9 @@ impl State {
         let mut visibility = VisibilitySystem{};
         visibility.run_now(&self.ecs);
 
+        let mut blockers = MapIndexingSystem{};
+        blockers.run_now(&self.ecs);
+
         let mut mob_movements = MobMovementSystem{};
         mob_movements.run_now(&self.ecs);
 
@@ -53,9 +59,14 @@ impl GameState for State {
         // Render renderables
         let positions = self.ecs.read_storage::<Position>();
         let renderables = self.ecs.read_storage::<Renderable>();
+        let map = self.ecs.fetch::<Map>();
 
-        for (pos, render) in (&positions, &renderables).join() {
-            ctx.set(pos.x, pos.y, render.fg, render.bg, render.glyph)
+        for (position, render) in (&positions, &renderables).join() {
+            let idx = get_position_index(position.x, position.y);
+
+            if map.discovered_tiles[idx] {
+                ctx.set(position.x, position.y, render.fg, render.bg, render.glyph);
+            }
         }
     }
 }
