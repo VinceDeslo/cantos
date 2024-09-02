@@ -5,8 +5,7 @@ pub struct GameLog {
 pub fn new() -> GameLog {
     return GameLog {
         entries: vec![
-            "You seem lost...".to_string(),
-            "Welcome Pilgrim!".to_string(),
+            "Welcome Pilgrim! You seem lost...".to_string(),
         ],
     }
 }

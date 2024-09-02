@@ -3,7 +3,8 @@ use specs::prelude::*;
 use crate::{
     maps::position::Position,
     mobs::mob::Mob, 
-    players::player::Player,
+    players::player::Player, 
+    ui::game_log::GameLog,
 };
 
 pub struct MobEncounterSystem {}
@@ -13,6 +14,7 @@ impl<'a> System<'a> for MobEncounterSystem {
         ReadStorage<'a, Position>,
         WriteStorage<'a, Mob>,
         ReadStorage<'a, Player>,
+        WriteExpect<'a, GameLog>,
     );
 
     fn run(&mut self, data: Self::SystemData) {
@@ -21,7 +23,7 @@ impl<'a> System<'a> for MobEncounterSystem {
 }
 
 fn detect_encounter(data: <MobEncounterSystem as specs::System>::SystemData){
-    let(position, mut mob, player) = data;
+    let(position, mut mob, player, mut log) = data;
 
     for (mob_position, mob) in (&position, &mut mob).join() {
         for (player_position, _player) in (&position, &player).join() {
@@ -32,11 +34,11 @@ fn detect_encounter(data: <MobEncounterSystem as specs::System>::SystemData){
 
             if distance < 1.5 && !mob.encountered {
                 mob.encountered = true;
-                println!(
+                log.entries.push(format!(
                     "Encountered {} {}",
                     mob.mob_type.get_article(),
-                    mob.mob_type.to_string()
-                );
+                    mob.mob_type.to_string(),
+                ));
             }
         }
     }
