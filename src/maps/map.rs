@@ -4,15 +4,19 @@ use crate::{TERMINAL_WIDTH, TERMINAL_HEIGHT};
 use crate::ui::bottom_bar::BOTTOM_BAR_HEIGHT;
 use crate::maps::position::Position;
 
-use super::random_wall_map;
+use super::builder::MapBuilder;
+use super::empty_map::EmptyMapBuilder;
+use super::random_map::RandomMapBuilder;
 
 pub const MAP_WIDTH: i32 = TERMINAL_WIDTH;
-pub const MAP_HEIGHT: i32 = TERMINAL_HEIGHT-BOTTOM_BAR_HEIGHT-1;
+pub const MAP_HEIGHT: i32 = TERMINAL_HEIGHT-BOTTOM_BAR_HEIGHT - 1;
+pub const MAP_COUNT: usize = (MAP_WIDTH * MAP_HEIGHT) as usize;
 
 const WALL_GLYPH: char = '~';
 const FLOOR_GLYPH: char = '.';
 
 pub enum MapType {
+    Empty,
     Random,
 }
 
@@ -37,10 +41,23 @@ pub struct Map {
 }
 
 impl Map {
-    pub fn new(map_type: MapType) -> Map {
+    pub fn new() -> Map {
+        Map{
+            map_type: MapType::Random,
+            tiles: vec![TileType::Floor; MAP_COUNT],
+            width: MAP_WIDTH,
+            height: MAP_HEIGHT,
+            discovered_tiles: vec![false; MAP_COUNT],
+            blocked_tiles: vec![false; MAP_COUNT],
+            tile_content: vec![Vec::new(); MAP_COUNT],
+        }
+    }
+
+    pub fn from_type(map_type: MapType) -> Map {
         match map_type {
-            MapType::Random => random_wall_map::new(), 
-        } 
+            MapType::Empty => EmptyMapBuilder::build(),
+            MapType::Random => RandomMapBuilder::build(),
+        }
     }
 
     pub fn populate_blocked_tiles(&mut self){

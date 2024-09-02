@@ -55,7 +55,7 @@ fn register_ecs_components(ecs: &mut World){
 }
 
 fn create_ecs_components(ecs: &mut World){
-    ecs.insert(Map::new(MapType::Random));
+    ecs.insert(Map::from_type(MapType::Random));
     ecs.insert(game_log::new());
 
     create_player(ecs);
