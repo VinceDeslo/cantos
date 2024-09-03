@@ -10,7 +10,7 @@ use crate::states::run_state::RunState;
 use crate::{Renderable, State};
 use crate::maps::{
     map::{Map, MAP_WIDTH, MAP_HEIGHT},
-    position::{Position, START_POSITION},
+    position::Position,
 };
 
 const PLAYER_GLYPH: char = '@';
@@ -19,9 +19,9 @@ const PLAYER_FOV: i32 = 5;
 #[derive(Component)]
 pub struct Player {}
 
-pub fn create_player(ecs: &mut World){
+pub fn create_player(ecs: &mut World, position: Position){
     ecs.create_entity() 
-        .with(START_POSITION)
+        .with(position)
         .with(Renderable {
             glyph: to_cp437(PLAYER_GLYPH),
             fg: RGB::named(GREEN),

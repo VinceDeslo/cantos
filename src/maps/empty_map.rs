@@ -1,35 +1,62 @@
+use specs::World;
+
 use crate::maps::map::{Map, TileType};
 use crate::maps::position::get_position_index;
 
 use super::builder::MapBuilder;
 use super::position::Position;
 
-pub struct EmptyMapBuilder {}
+pub struct EmptyMapBuilder {
+    map: Map,
+    start_position: Position,
+}
+
+pub fn new_empty_map_builder() -> Box<dyn MapBuilder>{
+    return Box::new(EmptyMapBuilder::new());
+}
 
 impl MapBuilder for EmptyMapBuilder {
-    fn build() -> Map {
-        let mut map = Map::new();
-        EmptyMapBuilder::generate_external_walls(&mut map);
-        return map
+    fn build(&mut self) {
+        EmptyMapBuilder::set_start(self);
+        EmptyMapBuilder::generate_external_walls(self);
+    }
+
+    fn get_map(&mut self) -> Map {
+        return self.map.clone(); 
+    }
+
+    fn get_start(&mut self) -> Position {
+        return self.start_position.clone();
+    }
+
+    fn spawn_entities(&mut self, _ecs: &mut World) {
+       todo!();
     }
 }
 
 impl EmptyMapBuilder {
-    fn get_start_position(map: &Map) -> Position {
-        Position {
-            x: map.width / 2,
-            y: map.height / 2,
+    fn new() -> EmptyMapBuilder {
+        EmptyMapBuilder {
+            map: Map::new(),
+            start_position: Position { x: 0, y: 0 },
+        }
+    }
+
+    fn set_start(&mut self) {
+        self.start_position = Position {
+            x: self.map.width / 2,
+            y: self.map.height / 2,
         } 
     }
 
-    fn generate_external_walls(map: &mut Map) {
-        for x in 0..map.width {
-            map.tiles[get_position_index(x, 0)] = TileType::Wall;
-            map.tiles[get_position_index(x, map.height - 1)] = TileType::Wall;
+    fn generate_external_walls(&mut self) {
+        for x in 0..self.map.width {
+            self.map.tiles[get_position_index(x, 0)] = TileType::Wall;
+            self.map.tiles[get_position_index(x, self.map.height - 1)] = TileType::Wall;
         }
-        for y in 0..map.height {
-            map.tiles[get_position_index(0, y)] = TileType::Wall;
-            map.tiles[get_position_index(map.width - 1, y)] = TileType::Wall;
+        for y in 0..self.map.height {
+            self.map.tiles[get_position_index(0, y)] = TileType::Wall;
+            self.map.tiles[get_position_index(self.map.width - 1, y)] = TileType::Wall;
         }
     }
 }

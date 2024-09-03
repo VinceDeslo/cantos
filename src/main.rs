@@ -54,10 +54,17 @@ fn register_ecs_components(ecs: &mut World){
     ecs.register::<Mob>();
 }
 
+// Refactor to leverage state::generate_world
 fn create_ecs_components(ecs: &mut World){
-    ecs.insert(Map::from_type(MapType::Random));
+    let mut map_builder = Map::from_type(MapType::Random);
+    map_builder.build();
+
+    let map = map_builder.get_map();
+    let player_position = map_builder.get_start();
+
+    ecs.insert(map);
     ecs.insert(game_log::new());
 
-    create_player(ecs);
+    create_player(ecs, player_position);
     create_mobs(ecs);
 }

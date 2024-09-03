@@ -1,14 +1,9 @@
 use specs::{Component, DenseVecStorage};
 use specs_derive::Component;
 
-use crate::maps::map::{MAP_WIDTH, MAP_HEIGHT};
+use crate::maps::map::MAP_WIDTH;
 
-pub const START_POSITION: Position = Position {
-    x: MAP_WIDTH / 2,
-    y: MAP_HEIGHT / 2,
-};
-
-#[derive(Component, PartialEq, Debug)]
+#[derive(Component, PartialEq, Debug, Clone)]
 pub struct Position {
     pub x: i32,
     pub y: i32,

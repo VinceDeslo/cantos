@@ -5,8 +5,8 @@ use crate::ui::bottom_bar::BOTTOM_BAR_HEIGHT;
 use crate::maps::position::Position;
 
 use super::builder::MapBuilder;
-use super::empty_map::EmptyMapBuilder;
-use super::random_map::RandomMapBuilder;
+use super::empty_map::new_empty_map_builder;
+use super::random_map::new_random_map_builder;
 
 pub const MAP_WIDTH: i32 = TERMINAL_WIDTH;
 pub const MAP_HEIGHT: i32 = TERMINAL_HEIGHT-BOTTOM_BAR_HEIGHT - 1;
@@ -15,6 +15,7 @@ pub const MAP_COUNT: usize = (MAP_WIDTH * MAP_HEIGHT) as usize;
 const WALL_GLYPH: char = '~';
 const FLOOR_GLYPH: char = '.';
 
+#[derive(PartialEq, Clone)]
 pub enum MapType {
     Empty,
     Random,
@@ -30,6 +31,7 @@ pub const BLOCKING_TILE_TYPES: [TileType; 1] = [
     TileType::Wall,
 ];
 
+#[derive(PartialEq, Clone)]
 pub struct Map {
     pub map_type: MapType,
     pub tiles: Vec<TileType>,
@@ -53,10 +55,10 @@ impl Map {
         }
     }
 
-    pub fn from_type(map_type: MapType) -> Map {
+    pub fn from_type(map_type: MapType) -> Box<dyn MapBuilder> {
         match map_type {
-            MapType::Empty => EmptyMapBuilder::build(),
-            MapType::Random => RandomMapBuilder::build(),
+            MapType::Empty => new_empty_map_builder(),
+            MapType::Random => new_random_map_builder(),
         }
     }
 

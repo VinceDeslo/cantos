@@ -1,7 +1,7 @@
 use bracket_lib::prelude::*;
 use specs::{World, WorldExt, Join, RunNow};
 
-use crate::maps::map::Map;
+use crate::maps::map::{Map, MapType};
 use crate::maps::position::get_position_index;
 use crate::systems::map_indexing_system::MapIndexingSystem;
 use crate::Renderable;
@@ -39,6 +39,10 @@ impl State {
 
         let mut mob_encounters = MobEncounterSystem{};
         mob_encounters.run_now(&self.ecs);
+    }
+
+    fn generate_world(&mut self) {
+        todo!()
     }
 }
 
