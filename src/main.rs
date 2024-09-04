@@ -24,11 +24,12 @@ use players::player::{Player, create_player};
 use mobs::mob::{create_mobs, Mob};
 
 const GAME_TITLE: &str = "Cantos";
-const TERMINAL_WIDTH: i32 = 80;
-const TERMINAL_HEIGHT: i32 = 50;
+const TERMINAL_WIDTH: i32 = 120;
+const TERMINAL_HEIGHT: i32 = 80;
 
 fn main() -> BError {
-    let mut ctx = BTermBuilder::simple80x50()
+    let mut ctx = BTermBuilder::simple(TERMINAL_WIDTH, TERMINAL_HEIGHT)
+        .unwrap()
         .with_title(GAME_TITLE)
         .build()?;
 

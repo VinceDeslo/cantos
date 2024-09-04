@@ -4,6 +4,7 @@ use specs::{World, WorldExt, Join, RunNow};
 use crate::maps::map::{Map, MapType};
 use crate::maps::position::get_position_index;
 use crate::systems::map_indexing_system::MapIndexingSystem;
+use crate::ui::sidebar::draw_sidebar;
 use crate::Renderable;
 use crate::ui::bottom_bar::draw_bottom_bar;
 use crate::maps::{
@@ -58,6 +59,7 @@ impl GameState for State {
         }
         
         draw_bottom_bar(&self.ecs, ctx);
+        draw_sidebar(&self.ecs, ctx);
         draw_map(&self.ecs, ctx);
 
         // Render renderables

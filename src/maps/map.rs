@@ -1,5 +1,6 @@
 use bracket_lib::prelude::*;
 use specs::{Entity, World};
+use crate::ui::sidebar::SIDEBAR_WIDTH;
 use crate::{TERMINAL_WIDTH, TERMINAL_HEIGHT};
 use crate::ui::bottom_bar::BOTTOM_BAR_HEIGHT;
 use crate::maps::position::Position;
@@ -8,8 +9,8 @@ use super::builder::MapBuilder;
 use super::empty_map::new_empty_map_builder;
 use super::random_map::new_random_map_builder;
 
-pub const MAP_WIDTH: i32 = TERMINAL_WIDTH;
-pub const MAP_HEIGHT: i32 = TERMINAL_HEIGHT-BOTTOM_BAR_HEIGHT - 1;
+pub const MAP_WIDTH: i32 = TERMINAL_WIDTH - SIDEBAR_WIDTH - 1;
+pub const MAP_HEIGHT: i32 = TERMINAL_HEIGHT - BOTTOM_BAR_HEIGHT - 1;
 pub const MAP_COUNT: usize = (MAP_WIDTH * MAP_HEIGHT) as usize;
 
 const WALL_GLYPH: char = '~';
@@ -19,6 +20,15 @@ const FLOOR_GLYPH: char = '.';
 pub enum MapType {
     Empty,
     Random,
+}
+
+impl MapType {
+    pub fn to_string(&self) -> String {
+        match self {
+            MapType::Empty => "Empty Map".to_string(),
+            MapType::Random => "Random Map".to_string(),
+        }
+    }
 }
 
 #[derive(PartialEq, Copy, Clone, Debug)]
@@ -34,6 +44,7 @@ pub const BLOCKING_TILE_TYPES: [TileType; 1] = [
 #[derive(PartialEq, Clone)]
 pub struct Map {
     pub map_type: MapType,
+    pub name: String,
     pub tiles: Vec<TileType>,
     pub width: i32,
     pub height: i32,
@@ -45,7 +56,8 @@ pub struct Map {
 impl Map {
     pub fn new() -> Map {
         Map{
-            map_type: MapType::Random,
+            map_type: MapType::Empty,
+            name: String::new(),
             tiles: vec![TileType::Floor; MAP_COUNT],
             width: MAP_WIDTH,
             height: MAP_HEIGHT,

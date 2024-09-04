@@ -4,6 +4,7 @@ use crate::maps::map::{Map, TileType};
 use crate::maps::position::get_position_index;
 
 use super::builder::MapBuilder;
+use super::map::MapType;
 use super::position::Position;
 
 const RANDOM_RATIO: usize = 300;
@@ -19,6 +20,8 @@ pub fn new_random_map_builder() -> Box<dyn MapBuilder>{
 
 impl MapBuilder for RandomMapBuilder {
     fn build(&mut self) {
+        RandomMapBuilder::set_type(self);
+        RandomMapBuilder::set_name(self);
         RandomMapBuilder::set_start(self);
         RandomMapBuilder::generate_external_walls(self);
         RandomMapBuilder::generate_random_walls(self);
@@ -43,6 +46,14 @@ impl RandomMapBuilder {
             map: Map::new(),
             start_position: Position { x: 0, y: 0 },
         }
+    }
+
+    fn set_type(&mut self) {
+        self.map.map_type = MapType::Random;
+    }
+
+    fn set_name(&mut self) {
+        self.map.name = self.map.map_type.to_string();
     }
 
     fn set_start(&mut self) {

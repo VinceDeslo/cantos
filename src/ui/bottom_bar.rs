@@ -4,7 +4,7 @@ use specs::prelude::*;
 use crate::{TERMINAL_WIDTH, TERMINAL_HEIGHT};
 use crate::ui::game_log::GameLog;
 
-pub const BOTTOM_BAR_HEIGHT: i32 = 10;
+pub const BOTTOM_BAR_HEIGHT: i32 = 20;
 
 pub fn draw_bottom_bar(ecs: &World, ctx : &mut BTerm) {
     ctx.draw_box(
