@@ -1,0 +1,1071 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "AppKit": {
+        "pkg-path": "darwin.apple_sdk.frameworks.AppKit"
+      },
+      "ApplicationServices": {
+        "pkg-path": "darwin.apple_sdk.frameworks.ApplicationServices"
+      },
+      "CoreFoundation": {
+        "pkg-path": "darwin.apple_sdk.frameworks.CoreFoundation"
+      },
+      "CoreGraphics": {
+        "pkg-path": "darwin.apple_sdk.frameworks.CoreGraphics"
+      },
+      "CoreVideo": {
+        "pkg-path": "darwin.apple_sdk.frameworks.CoreVideo"
+      },
+      "Foundation": {
+        "pkg-path": "darwin.apple_sdk.frameworks.Foundation"
+      },
+      "OpenGL": {
+        "pkg-path": "darwin.apple_sdk.frameworks.OpenGL",
+        "systems": [
+          "aarch64-darwin",
+          "x86_64-darwin"
+        ]
+      },
+      "QuartzCore": {
+        "pkg-path": "darwin.apple_sdk.frameworks.QuartzCore"
+      },
+      "cargo": {
+        "pkg-path": "cargo",
+        "pkg-group": "rust-toolchain"
+      },
+      "clang": {
+        "pkg-path": "clang",
+        "systems": [
+          "aarch64-darwin",
+          "x86_64-darwin"
+        ]
+      },
+      "clippy": {
+        "pkg-path": "clippy",
+        "pkg-group": "rust-toolchain"
+      },
+      "libiconv": {
+        "pkg-path": "libiconv",
+        "systems": [
+          "aarch64-darwin",
+          "x86_64-darwin"
+        ]
+      },
+      "pkg-config": {
+        "pkg-path": "pkg-config"
+      },
+      "rust-analyzer": {
+        "pkg-path": "rust-analyzer",
+        "pkg-group": "rust-analyzer"
+      },
+      "rust-lib-src": {
+        "pkg-path": "rustPlatform.rustLibSrc",
+        "pkg-group": "rust-toolchain"
+      },
+      "rustc": {
+        "pkg-path": "rustc",
+        "pkg-group": "rust-toolchain"
+      },
+      "rustfmt": {
+        "pkg-path": "rustfmt",
+        "pkg-group": "rust-toolchain"
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "x86_64-darwin"
+      ],
+      "allow": {
+        "licenses": []
+      },
+      "semver": {}
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "rust-analyzer",
+      "broken": false,
+      "derivation": "/nix/store/1svli3cciblkp2mkyygb8ngwzkl3bk1x-rust-analyzer-2024-09-02.drv",
+      "description": "Modular compiler frontend for the Rust language",
+      "install_id": "rust-analyzer",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rust-analyzer-2024-09-02",
+      "pname": "rust-analyzer",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2024-09-02",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/1l1ynbsf6rrb87slz1m0d31dbyxkzjay-rust-analyzer-2024-09-02"
+      },
+      "system": "aarch64-darwin",
+      "group": "rust-analyzer",
+      "priority": 5
+    },
+    {
+      "attr_path": "rust-analyzer",
+      "broken": false,
+      "derivation": "/nix/store/a35g6qpcw45v51xxzy6hq2cdcj76yhn6-rust-analyzer-2024-09-02.drv",
+      "description": "Modular compiler frontend for the Rust language",
+      "install_id": "rust-analyzer",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rust-analyzer-2024-09-02",
+      "pname": "rust-analyzer",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "2024-09-02",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/hlvry3d9gmv5lhsbh2yppf6jdm59jflk-rust-analyzer-2024-09-02"
+      },
+      "system": "x86_64-darwin",
+      "group": "rust-analyzer",
+      "priority": 5
+    },
+    {
+      "attr_path": "cargo",
+      "broken": false,
+      "derivation": "/nix/store/a6j07nsrmnqhv0mm2bbnvnjcfkv3bxpz-cargo-1.80.1.drv",
+      "description": "Downloads your Rust project's dependencies and builds your project",
+      "install_id": "cargo",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "cargo-1.80.1",
+      "pname": "cargo",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.80.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/idfq37bavykpfahg0q8cpawj90sckagq-cargo-1.80.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "cargo",
+      "broken": false,
+      "derivation": "/nix/store/lw8a7gvkhkjfwfccpyy0p2i2kq1bq5qk-cargo-1.80.1.drv",
+      "description": "Downloads your Rust project's dependencies and builds your project",
+      "install_id": "cargo",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "cargo-1.80.1",
+      "pname": "cargo",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.80.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/rc3niv9fvii3lc862h81qbqca89yagg9-cargo-1.80.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "clippy",
+      "broken": false,
+      "derivation": "/nix/store/4bh8wbqf05jvl888ls2395iq2w5yksq1-clippy-1.80.1.drv",
+      "description": "Bunch of lints to catch common mistakes and improve your Rust code",
+      "install_id": "clippy",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "clippy-1.80.1",
+      "pname": "clippy",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.80.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/aswyg8bfc3y5nzv6asaz6xlr5b79vvr6-clippy-1.80.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "clippy",
+      "broken": false,
+      "derivation": "/nix/store/3a0yk18a8h7cqvca1mzma1fc97vz7f6a-clippy-1.80.1.drv",
+      "description": "Bunch of lints to catch common mistakes and improve your Rust code",
+      "install_id": "clippy",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "clippy-1.80.1",
+      "pname": "clippy",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.80.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2qw6a3ay1da4c2l2rcalqi35n27my591-clippy-1.80.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "rustPlatform.rustLibSrc",
+      "broken": false,
+      "derivation": "/nix/store/za8qn1akdaglwdm4sv2ndnsa92hy54j7-rust-lib-src.drv",
+      "install_id": "rust-lib-src",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rust-lib-src",
+      "pname": "rustLibSrc",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "rust-lib-src",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/9mwdk449lws263ykk01xrbywpdzqmgh3-rust-lib-src"
+      },
+      "system": "aarch64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "rustPlatform.rustLibSrc",
+      "broken": false,
+      "derivation": "/nix/store/7g5crphsvw21gbwm5ij3b5pbhx0i0m8j-rust-lib-src.drv",
+      "install_id": "rust-lib-src",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rust-lib-src",
+      "pname": "rustLibSrc",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "rust-lib-src",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/p84mx4ksfzlvpi12rcxhsaihy0pkynxs-rust-lib-src"
+      },
+      "system": "x86_64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "rustc",
+      "broken": false,
+      "derivation": "/nix/store/sw1xd1imm58b2bq23fasx7jk9yfalw40-rustc-wrapper-1.80.1.drv",
+      "description": "Safe, concurrent, practical language (wrapper script)",
+      "install_id": "rustc",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rustc-wrapper-1.80.1",
+      "pname": "rustc",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-1.80.1",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "doc": "/nix/store/pwm2c3c2msxiy78ms1g1syqcf4zjwidx-rustc-wrapper-1.80.1-doc",
+        "man": "/nix/store/7irfsbn1g91hn132755l5nr0sajrip7v-rustc-wrapper-1.80.1-man",
+        "out": "/nix/store/3gggf0knmsc6srxq89gm424rffwma6rv-rustc-wrapper-1.80.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "rustc",
+      "broken": false,
+      "derivation": "/nix/store/w4n4a5cvwygrnqfn889s6f1ndsjxbs10-rustc-wrapper-1.80.1.drv",
+      "description": "Safe, concurrent, practical language (wrapper script)",
+      "install_id": "rustc",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rustc-wrapper-1.80.1",
+      "pname": "rustc",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-1.80.1",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "doc": "/nix/store/0b1mwhz7l71wdwxf925q4k8cvmcpx3aq-rustc-wrapper-1.80.1-doc",
+        "man": "/nix/store/nysgy2cz1bsjixn7igrzglj9s1bh0cfn-rustc-wrapper-1.80.1-man",
+        "out": "/nix/store/hl60dz242vrknfd15i984xwmzjm36z1b-rustc-wrapper-1.80.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "rustfmt",
+      "broken": false,
+      "derivation": "/nix/store/cqa5g8hhr7l15gzymwb5gdkiq4ixwygy-rustfmt-1.80.1.drv",
+      "description": "Tool for formatting Rust code according to style guidelines",
+      "install_id": "rustfmt",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rustfmt-1.80.1",
+      "pname": "rustfmt",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.80.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/p2xnaif204agqsmdlgmkypbhlk3isnx8-rustfmt-1.80.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "rustfmt",
+      "broken": false,
+      "derivation": "/nix/store/nandqymhz263w22xyrlf83k7njjnpg6f-rustfmt-1.80.1.drv",
+      "description": "Tool for formatting Rust code according to style guidelines",
+      "install_id": "rustfmt",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "rustfmt-1.80.1",
+      "pname": "rustfmt",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.80.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/kh259aj4gv6xnnaa2ayi0q1qmsf98ck0-rustfmt-1.80.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "rust-toolchain",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.AppKit",
+      "broken": false,
+      "derivation": "/nix/store/q0lc6iczd51pkrism7r9nvz6dkf3pdbp-apple-framework-AppKit-11.0.0.drv",
+      "description": "Apple SDK framework AppKit",
+      "install_id": "AppKit",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-AppKit-11.0.0",
+      "pname": "AppKit",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-AppKit-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/0nh8rqwsdaj9pj6lw0nkggry8ykkpazg-apple-framework-AppKit-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.AppKit",
+      "broken": false,
+      "derivation": "/nix/store/vn4fw8rrf8i0634s87kxi729p99wlk84-apple-framework-AppKit.drv",
+      "description": "Apple SDK framework AppKit",
+      "install_id": "AppKit",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-AppKit",
+      "pname": "AppKit",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-AppKit",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/5gay1axd8zc9zznah90dj4az1p2nb7sb-apple-framework-AppKit"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.ApplicationServices",
+      "broken": false,
+      "derivation": "/nix/store/yzsjdgf4f2qmq4954p88a8xj3gjqvdcs-apple-framework-ApplicationServices-11.0.0.drv",
+      "description": "Apple SDK framework ApplicationServices",
+      "install_id": "ApplicationServices",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-ApplicationServices-11.0.0",
+      "pname": "ApplicationServices",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-ApplicationServices-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/xw3im8zhglaqzmm5g61y9w6rgq42fchv-apple-framework-ApplicationServices-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.ApplicationServices",
+      "broken": false,
+      "derivation": "/nix/store/7m146mpllq206fjic07hs2f22iyvk7hz-apple-framework-ApplicationServices.drv",
+      "description": "Apple SDK framework ApplicationServices",
+      "install_id": "ApplicationServices",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-ApplicationServices",
+      "pname": "ApplicationServices",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-ApplicationServices",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/m64gskfbq6w5c76c3i0zszmzy62i4k4b-apple-framework-ApplicationServices"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreFoundation",
+      "broken": false,
+      "derivation": "/nix/store/sxqnysps6qv1qflly708hm71625fkfz7-apple-framework-CoreFoundation-11.0.0.drv",
+      "description": "Apple SDK framework CoreFoundation",
+      "install_id": "CoreFoundation",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-CoreFoundation-11.0.0",
+      "pname": "CoreFoundation",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreFoundation-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/qwcay9inpzjj0gjwam6xmiv654z8x172-apple-framework-CoreFoundation-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreFoundation",
+      "broken": false,
+      "derivation": "/nix/store/v8f70g13j34xkmy86ql5yi4xplvasvnv-apple-framework-CoreFoundation.drv",
+      "description": "Apple SDK framework CoreFoundation",
+      "install_id": "CoreFoundation",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-CoreFoundation",
+      "pname": "CoreFoundation",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreFoundation",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/a295q0l0vgj81p35865v6x2f22qf30rr-apple-framework-CoreFoundation"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreGraphics",
+      "broken": false,
+      "derivation": "/nix/store/29ps4rpm07pd353qv5wl53mb7zsp6m1d-apple-framework-CoreGraphics-11.0.0.drv",
+      "description": "Apple SDK framework CoreGraphics",
+      "install_id": "CoreGraphics",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-CoreGraphics-11.0.0",
+      "pname": "CoreGraphics",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreGraphics-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/vq5nfzpb9yy9r8d99h34m5hfz5wwzw2m-apple-framework-CoreGraphics-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreGraphics",
+      "broken": false,
+      "derivation": "/nix/store/vxjf57r6sxcrl241qvh9y245m9b1a9ni-apple-framework-CoreGraphics.drv",
+      "description": "Apple SDK framework CoreGraphics",
+      "install_id": "CoreGraphics",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-CoreGraphics",
+      "pname": "CoreGraphics",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreGraphics",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/qbzpamb83y019ic0izp9b1w7sr5k0vb7-apple-framework-CoreGraphics"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreVideo",
+      "broken": false,
+      "derivation": "/nix/store/69y9n0gayhgh6pv7z2q8b8jc0wp8g4hz-apple-framework-CoreVideo-11.0.0.drv",
+      "description": "Apple SDK framework CoreVideo",
+      "install_id": "CoreVideo",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-CoreVideo-11.0.0",
+      "pname": "CoreVideo",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreVideo-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/4iaq8s5h1ywwwng9d9cy5y6l856hadqq-apple-framework-CoreVideo-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreVideo",
+      "broken": false,
+      "derivation": "/nix/store/mdqf3m9jn5qkz6fs5qk49an2ar71xz05-apple-framework-CoreVideo.drv",
+      "description": "Apple SDK framework CoreVideo",
+      "install_id": "CoreVideo",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-CoreVideo",
+      "pname": "CoreVideo",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreVideo",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/ssik5w0y23vkapmiki11w8ifxq4c30yy-apple-framework-CoreVideo"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.Foundation",
+      "broken": false,
+      "derivation": "/nix/store/h78vjh4z2adl3ww06iim1zq0wmfc1l6g-apple-framework-Foundation-11.0.0.drv",
+      "description": "Apple SDK framework Foundation",
+      "install_id": "Foundation",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-Foundation-11.0.0",
+      "pname": "Foundation",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-Foundation-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/jsyq7rz23ks3g8c1k6w2lcvkppl4b22y-apple-framework-Foundation-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.Foundation",
+      "broken": false,
+      "derivation": "/nix/store/7bxbwx2qfdngsrrg6lfy1qizdwfp14xz-apple-framework-Foundation.drv",
+      "description": "Apple SDK framework Foundation",
+      "install_id": "Foundation",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-Foundation",
+      "pname": "Foundation",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-Foundation",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/yxfd9v07fglclvh7x8469qbyq1lzdbab-apple-framework-Foundation"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.OpenGL",
+      "broken": false,
+      "derivation": "/nix/store/s5kk9cxc1dg79kpbqa3r6ykrri6fwn3s-apple-framework-OpenGL-11.0.0.drv",
+      "description": "Apple SDK framework OpenGL",
+      "install_id": "OpenGL",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-OpenGL-11.0.0",
+      "pname": "OpenGL",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-OpenGL-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/cfsk4wrb6s78h0in2g1fs9i41vlsfv1z-apple-framework-OpenGL-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.OpenGL",
+      "broken": false,
+      "derivation": "/nix/store/9cav004wf0lkjymcihz3w2dfl58mpzw9-apple-framework-OpenGL.drv",
+      "description": "Apple SDK framework OpenGL",
+      "install_id": "OpenGL",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-OpenGL",
+      "pname": "OpenGL",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-OpenGL",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/fsri9cbp2j87c9vnai4xy73nkvg5wsiy-apple-framework-OpenGL"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.QuartzCore",
+      "broken": false,
+      "derivation": "/nix/store/x07qp026gf99yqsycf4z9ha9wasybd5m-apple-framework-QuartzCore-11.0.0.drv",
+      "description": "Apple SDK framework QuartzCore",
+      "install_id": "QuartzCore",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-QuartzCore-11.0.0",
+      "pname": "QuartzCore",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-QuartzCore-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/nbxway6159bp1b7qm7z2mm0h88v6gm56-apple-framework-QuartzCore-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.QuartzCore",
+      "broken": false,
+      "derivation": "/nix/store/x21dlyxna8mvmhbm8123ns8bhhicvscr-apple-framework-QuartzCore.drv",
+      "description": "Apple SDK framework QuartzCore",
+      "install_id": "QuartzCore",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "apple-framework-QuartzCore",
+      "pname": "QuartzCore",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-QuartzCore",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/2wyxyi18lx80hz6hnp4ydwdz1h12i90l-apple-framework-QuartzCore"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "clang",
+      "broken": false,
+      "derivation": "/nix/store/kx00vfvblgv363bnm3azbspv6r55gifh-clang-wrapper-16.0.6.drv",
+      "description": "C language family frontend for LLVM (wrapper script)",
+      "install_id": "clang",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "clang-wrapper-16.0.6",
+      "pname": "clang",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/8c3v3rdzvi5364x9m959ijyy6iamqf5f-clang-wrapper-16.0.6"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "clang",
+      "broken": false,
+      "derivation": "/nix/store/pickx0jr4ihayv84iqkns2zqhakwqm7h-clang-wrapper-16.0.6.drv",
+      "description": "C language family frontend for LLVM (wrapper script)",
+      "install_id": "clang",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "clang-wrapper-16.0.6",
+      "pname": "clang",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/kk0zkxvj9k09ra65gg9pzd9mlzykbxps-clang-wrapper-16.0.6"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libiconv",
+      "broken": false,
+      "derivation": "/nix/store/5g94mlh38xmfwq5wpik66jsaw1g026ss-libiconv-99.drv",
+      "description": "Iconv(3) implementation",
+      "install_id": "libiconv",
+      "license": "[ BSD-2-Clause, BSD-3-Clause, APSL-1.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "libiconv-99",
+      "pname": "libiconv",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "99",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/r2jkk7lsmi17m5lp3r7aip9626n07qfz-libiconv-99-dev",
+        "out": "/nix/store/cjzmz9dskblgkbv4by2wnsyvdjw6jpcm-libiconv-99"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libiconv",
+      "broken": false,
+      "derivation": "/nix/store/6h8yar9cd61pbnlrwwmg6pniixl7xf5l-libiconv-99.drv",
+      "description": "Iconv(3) implementation",
+      "install_id": "libiconv",
+      "license": "[ BSD-2-Clause, BSD-3-Clause, APSL-1.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "libiconv-99",
+      "pname": "libiconv",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "99",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/iqgcmki7xk4v9fzk67wm63fwjby97cln-libiconv-99-dev",
+        "out": "/nix/store/byx7hpi5hblzk8hpfd5pg2v7a63m5j15-libiconv-99"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pkg-config",
+      "broken": false,
+      "derivation": "/nix/store/givjjasvp1jmwkwigkdlc1h40hgy11dk-pkg-config-wrapper-0.29.2.drv",
+      "description": "Tool that allows packages to find out information about other packages (wrapper script)",
+      "install_id": "pkg-config",
+      "license": "GPL-2.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "pkg-config-wrapper-0.29.2",
+      "pname": "pkg-config",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-0.29.2",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "doc": "/nix/store/n0l18xnbnyibn4mjx66pg3k315jiyxdx-pkg-config-wrapper-0.29.2-doc",
+        "man": "/nix/store/8n49lrlmil5lylizjdc1x6nz8dfqq36s-pkg-config-wrapper-0.29.2-man",
+        "out": "/nix/store/g694qc6kxcl6p74n18aq81ry1wvzxfm3-pkg-config-wrapper-0.29.2"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "pkg-config",
+      "broken": false,
+      "derivation": "/nix/store/qhlh1n949vykc7c12pf0572506vimbm0-pkg-config-wrapper-0.29.2.drv",
+      "description": "Tool that allows packages to find out information about other packages (wrapper script)",
+      "install_id": "pkg-config",
+      "license": "GPL-2.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "name": "pkg-config-wrapper-0.29.2",
+      "pname": "pkg-config",
+      "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+      "rev_count": 685764,
+      "rev_date": "2024-09-26T11:04:55Z",
+      "scrape_date": "2024-09-28T03:18:30Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-0.29.2",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "doc": "/nix/store/wvivcvlprq994m87shbp7f29794z297l-pkg-config-wrapper-0.29.2-doc",
+        "man": "/nix/store/pjkb00fn1h533lyj2hlrcf8clq1p5558-pkg-config-wrapper-0.29.2-man",
+        "out": "/nix/store/8y616797pbbagd1405prc1lwgc5p4r0y-pkg-config-wrapper-0.29.2"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}

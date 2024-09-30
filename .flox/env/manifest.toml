@@ -1,0 +1,47 @@
+version = 1
+
+[install]
+# Rust toolchain
+cargo.pkg-path = "cargo"
+cargo.pkg-group = "rust-toolchain"
+rustc.pkg-path = "rustc"
+rustc.pkg-group = "rust-toolchain"
+clippy.pkg-path = "clippy"
+clippy.pkg-group = "rust-toolchain"
+rustfmt.pkg-path = "rustfmt"
+rustfmt.pkg-group = "rust-toolchain"
+rust-lib-src.pkg-path = "rustPlatform.rustLibSrc"
+rust-lib-src.pkg-group = "rust-toolchain"
+libiconv.pkg-path = "libiconv"
+libiconv.systems = ["aarch64-darwin", "x86_64-darwin"]
+pkg-config.pkg-path = "pkg-config"
+
+# rust-analyzer goes in its own group because it's updated
+# on a different cadence from the compiler and doesn't need
+# to match versions
+rust-analyzer.pkg-path = "rust-analyzer"
+rust-analyzer.pkg-group = "rust-analyzer"
+
+# Linker
+clang.pkg-path = "clang"
+clang.systems = ["aarch64-darwin", "x86_64-darwin"]
+
+# Frameworks 
+OpenGL.pkg-path = "darwin.apple_sdk.frameworks.OpenGL"
+OpenGL.systems = ["aarch64-darwin", "x86_64-darwin"]
+ApplicationServices.pkg-path = "darwin.apple_sdk.frameworks.ApplicationServices"
+CoreGraphics.pkg-path = "darwin.apple_sdk.frameworks.CoreGraphics"
+CoreVideo.pkg-path = "darwin.apple_sdk.frameworks.CoreVideo"
+CoreFoundation.pkg-path = "darwin.apple_sdk.frameworks.CoreFoundation"
+AppKit.pkg-path = "darwin.apple_sdk.frameworks.AppKit"
+QuartzCore.pkg-path = "darwin.apple_sdk.frameworks.QuartzCore"
+Foundation.pkg-path = "darwin.apple_sdk.frameworks.Foundation"
+
+[vars]
+
+[hook]
+
+[profile]
+
+[options]
+systems = ["aarch64-darwin", "x86_64-darwin"]
