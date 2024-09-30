@@ -12,3 +12,11 @@ A small CLI game is a fun option that gets me away from the usual distributed sy
 - Integrate an LLM as a nonsense generator for characters / mobs / lore
 - Maybe web hosted with WASM?
 - Maybe an event system for multiplayer over NATS?
+
+## Running local dev
+
+> The Nix flake is only configured for Arm based Macs
+
+```
+nix develop
+```
